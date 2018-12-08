@@ -54,28 +54,37 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CefSharp">
-      <HintPath>..\Libraries\BaseLibrary\packages\CefSharp.Common.69.0.0\CefSharp\x86\CefSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="CefSharp.Core">
-      <HintPath>..\Libraries\BaseLibrary\packages\CefSharp.Common.69.0.0\CefSharp\x86\CefSharp.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="CefSharp.OffScreen">
-      <HintPath>..\Libraries\BaseLibrary\packages\CefSharp.OffScreen.69.0.0\CefSharp\x86\CefSharp.OffScreen.dll</HintPath>
+    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553" />
+    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553" />
+    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553" />
+    <Reference Include="ReLogic, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ReLogic.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="TerrariaHooks">
+      <HintPath>lib\TerrariaHooks.dll</HintPath>
+    </Reference>
     <Reference Include="tModLoader">
-      <HintPath>..\Libraries\BaseLibrary\bin\Debug\tModLoader.exe</HintPath>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\content\app_105600\depot_105601\tModLoader.exe</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Hooking\Hooking.cs" />
+    <Compile Include="Hooking\Hooking_DoDraw.cs" />
     <Compile Include="RefinedCode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="build.txt" />
     <Content Include="description.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Libraries\BaseLibrary\BaseLibrary.csproj">
+      <Project>{0387FE69-7E77-4DC7-9867-EC3994E946D2}</Project>
+      <Name>BaseLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
